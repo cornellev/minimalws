@@ -19,6 +19,7 @@ app.get("*", (request, response) => {
     response.sendFile(path.resolve(filepath))
 })
 
+// when something connects to this server...
 server.on("connection", socket => {
     // send socket errors to the main error stream
     socket.on("error", console.error)
@@ -34,7 +35,7 @@ server.on("connection", socket => {
     // start sending data. This is where we would want to actually
     // get the data from the mobile app instead over a *different* 
     // websocket. When we get that data, we would want to send it to
-    // the frontend! This assumes the data comes at a fixed rate.
+    // the frontend using this socket! This fakes having data
     const interval1 = setInterval(() => {
         const throttle = Math.floor(Math.random() * 1000 * 100) / 100
         const wattage = Math.floor(throttle / 150 + 50 * Math.random() * 100) / 100
@@ -54,6 +55,7 @@ server.on("connection", socket => {
 })
 
 const port = process.env.PORT ?? 8000
+// note that this is http, not app!
 http.listen(port, () => {
     console.log(`Listening at http://localhost:${port}!`)
     console.log("---")
