@@ -1,4 +1,3 @@
-import path from "path"
 import morgan from "morgan"
 import express from "express"
 import { createServer } from "http"
