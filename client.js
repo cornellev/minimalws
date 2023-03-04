@@ -38,9 +38,13 @@ socket.addEventListener("message", e => {
             break
 
         case "watts":
-        case "throttle":
-            // set wattage/throttle to the given value
+            // set wattage to the given value
             watts.textContent = command[1]
+            break
+
+        case "throttle":
+            // set throttle to the given value
+            throttle.textContent = command[1]
             break
 
         default:
