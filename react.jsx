@@ -5,7 +5,8 @@ const App = () => {
     const [watts, setWatts] = React.useState(0)
     const [throttle, setThrottle] = React.useState(0)
 
-    const socket = React.useRef(new WebSocket("ws:" + location.host + location.pathname))
+    // it turns out that you don't even need that pathname!
+    const socket = React.useRef(new WebSocket("ws:" + location.host))
 
     // empty deps array => run once
     React.useEffect(() => {

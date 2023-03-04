@@ -3,7 +3,7 @@ const App = () => {
   const [lap, setLap] = React.useState(1);
   const [watts, setWatts] = React.useState(0);
   const [throttle, setThrottle] = React.useState(0);
-  const socket = React.useRef(new WebSocket("ws:" + location.host + location.pathname));
+  const socket = React.useRef(new WebSocket("ws:" + location.host));
 
   // empty deps array => run once
   React.useEffect(() => {
