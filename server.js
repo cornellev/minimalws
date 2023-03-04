@@ -30,6 +30,27 @@ server.on("connection", socket => {
 
     // ping pong woohoo
     socket.send("ping")
+
+    // start sending data. This is where we would want to actually
+    // get the data from the mobile app instead over a *different* 
+    // websocket. When we get that data, we would want to send it to
+    // the frontend! This assumes the data comes at a fixed rate.
+    const interval1 = setInterval(() => {
+        const throttle = Math.floor(Math.random() * 1000 * 100) / 100
+        const wattage = Math.floor(throttle / 150 + 50 * Math.random() * 100) / 100
+        socket.send("throttle " + throttle)
+        socket.send("watts " + wattage)
+    }, 100)
+
+    const interval2 = setInterval(() => {
+        socket.send("lap")
+    }, 1500)
+
+    // clear intervals if the socket closes
+    socket.on("close", () => {
+        clearInterval(interval1)
+        clearInterval(interval2)
+    })
 })
 
 const port = process.env.PORT ?? 8000
