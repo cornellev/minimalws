@@ -16,7 +16,7 @@ _Note:_ Also have a look at [my Tic-Tac-Toe with websockets project](https://git
 2. Run `npm start`
 3. Navigate to [localhost:8000](http://localhost:8000)
 
-If you want to make modifications to `react.jsx`, then make sure to run the following command once you're done making changes. This command will transpile the JSX and place it in the right spot to be loaded.
+If you want to make modifications to `react.jsx`, then make sure to run the following command once you're done making changes. This command will transpile the JSX and place it in the right spot to be loaded. This will also be run with `npm run compile`.
 
 ```bash
 ./node_modules/.bin/babel --presets @babel/preset-react react.jsx -o public/react.js

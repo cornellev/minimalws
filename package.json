@@ -5,7 +5,8 @@
   "description": "Minimal example of locally-testable websocket client and server.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "./node_modules/.bin/babel --presets @babel/preset-react react.jsx -o public/react.js"
   },
   "keywords": [
     "websockets"
