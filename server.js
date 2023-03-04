@@ -11,13 +11,12 @@ const server = new WebSocketServer({ server: http })
 // log all requests to the server
 app.use(morgan("dev"))
 
-// note: don't do this in production. it exposes all
-// of the files in this directory! Convenient here though
-app.get("*", (request, response) => {
-    let filepath = path.relative("/", request.url)
-    if (filepath === "") filepath = "index.html"
-    response.sendFile(path.resolve(filepath))
-})
+// serve static files
+app.use(express.static("public"))
+
+// redirect root to index
+app.get("/", (request, response) =>
+    response.redirect("/index.html"))
 
 // when something connects to this server...
 server.on("connection", socket => {
