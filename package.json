@@ -1,0 +1,20 @@
+{
+  "name": "minimalws",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Minimal example of locally-testable websocket client and server.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "websockets"
+  ],
+  "author": "jklein64",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "ws": "^8.12.1"
+  }
+}
