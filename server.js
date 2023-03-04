@@ -1,7 +1,7 @@
+import path from "path"
+import morgan from "morgan"
 import express from "express"
 import { createServer } from "http"
-import morgan from "morgan"
-import path from "path"
 import { WebSocketServer } from "ws"
 
 const app = express()
