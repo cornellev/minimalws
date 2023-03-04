@@ -1,10 +1,12 @@
 import express from "express"
+import { createServer } from "http"
 import morgan from "morgan"
 import path from "path"
 import { WebSocketServer } from "ws"
 
 const app = express()
-const server = new WebSocketServer({ server: app })
+const http = createServer(app)
+const server = new WebSocketServer({ server: http })
 
 // log all requests to the server
 app.use(morgan("dev"))
@@ -22,18 +24,16 @@ server.on("connection", socket => {
     socket.on("error", console.error)
 
     // print when we receive messages
-    socket.on("message", data => console.log)
+    socket.on("message", data => {
+        console.log("> " + data)
+    })
 
     // ping pong woohoo
     socket.send("ping")
 })
 
-server.on("listening", () => {
-    console.log("Something connected to the WebSocket server!")
-})
-
 const port = process.env.PORT ?? 8000
-app.listen(port, () => {
+http.listen(port, () => {
     console.log(`Listening at http://localhost:${port}!`)
     console.log("---")
 })
