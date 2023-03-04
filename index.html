@@ -7,12 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="client.js"></script>
     <title>minimalws</title>
+    <style type="text/css">
+        body {
+            margin-top: 200px;
+            font-family: Verdana;
+            display: flex;
+            /* center */
+            justify-content: center;
+            align-items: center;
+        }
+
+        section {
+            width: 200px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Lap <span id="lap">1</span></h1>
-    <p>Watts: <span id="watts">0</span></p>
-    <p>Throttle: <span id="throttle">0</span></p>
+    <section>
+        <h1>Lap <span id="lap">1</span></h1>
+        <p>Watts: <code id="watts">0</code></p>
+        <p>Throttle: <code id="throttle">0</code></p>
+    </section>
 </body>
 
 </html>
