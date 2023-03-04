@@ -55,7 +55,7 @@ server.on("connection", socket => {
 const port = process.env.PORT ?? 8000
 // note that this is http, not app!
 http.listen(port, () => {
-    console.log(`Listening at http://localhost:${port}!`)
+    console.log(`Listening at http://localhost:${port} !`)
     console.log("---")
 })
 
