@@ -1,5 +1,7 @@
 # CEV Telemetry Minimal WebSocket Application
 
+_By Jason Klein_
+
 A minimal implementation of client-server WebSocket communication, using [expressjs](https://expressjs.com) and the nodejs [ws](https://github.com/websockets/ws) library. This repository is intended to demonstrate how it is possible to communicate dashboard data across the client and server in a way that can be tested over localhost (apparently `socket.io` can do this too but I was having trouble with it earlier when combining it with React).
 
 This repository includes lots of commented code and notes about how to handle things when used as part of a real dashboard project, such as making a consistent client-server communication protocol (maybe with JSON instead of the Strings that I used here...).
